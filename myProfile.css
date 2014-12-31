@@ -1,0 +1,81 @@
+@import url(myBook.css);
+
+.left {
+background-color:#F5A9BC;
+width:15%;
+float:left;
+height:100%;
+clear:both;
+padding:0 0 0 5%;
+}
+
+.feed,.profile {
+padding-top:40px;
+cursor:pointer;
+}
+
+.del {
+padding-right:80px;
+margin-right:90px;
+float:right;
+cursor:pointer;
+}
+
+.elements {
+padding-top:40px;
+}
+
+.content {
+background-color:#D8D8D8;
+width:85%;
+float:left;
+height:100%;
+padding:0 5%;
+}
+
+header:nth-of-type(n) a {
+float:right;
+margin:0 5px 0 0;
+padding:5px;
+}
+
+.myProfSec {
+padding-top:53px;
+height:100%;
+}
+
+.feedList {
+height:100%;
+width:100%;
+padding:5px 100px 200px 300px;
+}
+
+.feeds {
+position:relative;
+margin:0 0 40px;
+}
+
+.url {
+background-color:#F5A9BC;
+}
+
+.txt {
+background-color:#0489B1;
+}
+
+ul {
+list-style-type:none;
+}
+
+.feed_content {
+display:none;
+}
+
+.content:nth-of-type(n) input,.content:nth-of-type(n) textarea {
+float:center;
+margin:0 5px 30px 0;
+}
+
+.image,.time {
+float:right;
+}

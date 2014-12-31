@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="myProfile.css">
+      <script src="myBook.js"></script>
+   </head>
+   <body>
+      <header>
+         Profile
+         <a href="myBook.html">SignOut</a>
+      </header>
+      <section>
+         <div class="myProfSec">
+         <div class="left">
+            <div class="feed" onclick="showFeed()">
+               <h1>Feed</h1>
+            </div>
+            <div class="profile" onclick="showProfile()">
+               <h1>Profile</h1>
+            </div>
+         </div>
+         <div class="content">
+            <div class="elements">
+               <div  id="feedId">
+                  <input type="textbox" id="urlfeed" placeholder="Text or URL feed"  />	
+                  <input type="button"   id="post" value="Post" onclick="createFeed()"/>
+                  <ul class="feedList" id="feedContainer">
+                  </ul>
+               </div>
+               <div  class="feed_content" id="profileId">
+                  <div class="image">
+                     <canvas id="myCanvas" width="150" height="150" style="border:1px solid #000000;"></canvas>
+                  </div>
+                  <input type="textbox"  id="name" placeholder="Name"  /><br>
+                  <input type="textbox"  id="age" placeholder="Age"  /><br>
+                  <input type="textbox"  id="mobilenumber" placeholder="MobileNumber" /><br>
+                  <input type="textbox"  id="email" placeholder="Email"   /><br>
+                  <textarea rows="4" cols="30" rows="40" cols="50" id="address" ></textarea>
+                  <br>
+                  <input type="textbox"  id="image" placeholder="Choose the profile Pic" disabled />
+                  <input type="file"     id="profileimage" value="Select the profile picture" accept="image/*"><br>
+                  <input type="submit"   id="save" value="Save" disabled onClick="validate()"/>
+               </div>
+            </div>
+            <script>
+               var imageLoader = document.getElementById('profileimage');
+               var canvas = document.getElementById('myCanvas');
+               var ctx = canvas.getContext('2d');
+               function handleImage(e){
+               
+               var reader = new FileReader();
+               reader.onload = function(event){
+                  var img = new Image();
+               img.width=150;
+               img.height=150;
+               
+               
+                  img.onload = function(){
+                      canvas.width = 150;
+                      canvas.height =150 ;
+                      ctx.drawImage(img,0,0);
+                  }
+                  img.src = event.target.result;
+               }
+               reader.readAsDataURL(e.target.files[0]);     
+               }
+               imageLoader.addEventListener('change', handleImage, false);
+            </script>
+         </div>
+      </section>
+      <footer>
+         <center>Talent Improving Exercise OFS</center>
+      </footer>
+   </body>
+</html>
